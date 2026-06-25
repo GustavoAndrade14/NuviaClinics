@@ -73,18 +73,30 @@ export default function RegisterPage() {
                                 <Megaphone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground z-10" />
                                 <Select value={comoConheceu} onValueChange={setComoConheceu}>
                                     <SelectTrigger
-                                        className="w-full h-12 pl-10 pr-3 text-base border border-input bg-transparent shadow-sm"
+                                        className="w-full h-12 pl-10 pr-3 text-base border border-input bg-transparent shadow-sm cursor-pointer"
                                     >
                                         <SelectValue placeholder="Selecione" />
                                     </SelectTrigger>
 
                                     <SelectContent>
-                                        <SelectItem value="cliente">Outro cliente</SelectItem>
-                                        <SelectItem value="site">Site</SelectItem>
-                                        <SelectItem value="google">Google</SelectItem>
-                                        <SelectItem value="instagram">Instagram</SelectItem>
-                                        <SelectItem value="tiktok">TikTok</SelectItem>
-                                        <SelectItem value="outro">Outra forma</SelectItem>
+                                        <SelectItem value="cliente" className="cursor-pointer">
+                                            Outro cliente
+                                        </SelectItem>
+                                        <SelectItem value="site" className="cursor-pointer">
+                                            Site
+                                        </SelectItem>
+                                        <SelectItem value="google" className="cursor-pointer">
+                                            Google
+                                        </SelectItem>
+                                        <SelectItem value="instagram" className="cursor-pointer">
+                                            Instagram
+                                        </SelectItem>
+                                        <SelectItem value="tiktok" className="cursor-pointer">
+                                            TikTok
+                                        </SelectItem>
+                                        <SelectItem value="outro" className="cursor-pointer">
+                                            Outra forma
+                                        </SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>

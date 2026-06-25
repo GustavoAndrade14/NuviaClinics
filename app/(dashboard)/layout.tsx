@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { AppSidebar } from "@/components/app-sidebar";
-import { SiteHeader } from "@/components/site-header";
-import {
-    SidebarInset,
-    SidebarProvider,
-} from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/layout/app-sidebar";
+import { SiteHeader } from "@/components/layout/site-header";
 
 import "../globals.css";
 
@@ -26,32 +21,16 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html
-            lang="pt-BR"
-            className={`${plusJakartaSans.variable} h-full antialiased`}
-        >
-            <body className="min-h-screen">
-                <TooltipProvider>
-                    <SidebarProvider
-                        style={
-                            {
-                                "--sidebar-width": "calc(var(--spacing) * 72)",
-                                "--header-height": "calc(var(--spacing) * 12)",
-                            } as React.CSSProperties
-                        }
-                    >
-                        <AppSidebar variant="inset" />
+        <div className="flex h-screen overflow-hidden bg-background">
+            <AppSidebar />
 
-                        <SidebarInset>
-                            <SiteHeader />
+            <div className="flex flex-1 flex-col min-w-0">
+                <SiteHeader />
 
-                            <main className="flex flex-1 flex-col">
-                                {children}
-                            </main>
-                        </SidebarInset>
-                    </SidebarProvider>
-                </TooltipProvider>
-            </body>
-        </html>
+                <main className="flex-1 overflow-auto">
+                    {children}
+                </main>
+            </div>
+        </div>
     );
 }

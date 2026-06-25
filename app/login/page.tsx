@@ -1,6 +1,7 @@
 'use client'
 
 import { LogIn, Mail, Lock, EyeOff, Eye } from "lucide-react"
+import Link from "next/link";
 import { useState } from "react";
 
 
@@ -53,9 +54,13 @@ export default function LoginPage() {
                                     )}
                                 </button>
                             </div>
-                            <a className="text-xs text-[#cc9433] hover:underline cursor-pointer">Esqueceu sua senha?</a>
+                            <a className="text-xs text-[#cc9433] hover:underline cursor-pointer" href="/esqueci-senha">
+                                Esqueceu sua senha?
+                            </a>
                         </div>
-                        <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#cc9433] text-primary-foreground shadow hover:bg-[#cc9433]/90 px-4 py-2 w-full h-12 font-medium cursor-pointer">Entrar</button>
+                        <Link href="/dashboard">
+                            <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#cc9433] text-primary-foreground shadow hover:bg-[#cc9433]/90 px-4 py-2 w-full h-12 font-medium cursor-pointer">Entrar</button>
+                        </Link>
                     </form>
 
                 </div>

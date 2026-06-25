@@ -22,6 +22,7 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${plusJakartaSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-screen">
         {children}
